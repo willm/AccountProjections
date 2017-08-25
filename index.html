@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+		<link rel="stylesheet" href="static/css/style.css" />
+		<title>Synth</title>
+	</head>
+	<body>
+		<div class="container" id="synth">
+			<div class="row">
+				<div class="col-6 container" id="osc-1">
+					<div class="row">
+						<h2 class="col">Osc 1</h2>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<label for="osc-1-octave">Octave</label>
+						</div>
+						<div class="col-9">
+							<input type="range"
+								class="fader"
+								value="0"
+								max="2"
+								min="-2"
+								id="osc-1-octave"
+							/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<label for="osc-1-detune">Detune</label>
+						</div>
+						<div class="col-9">
+							<input type="range"
+								class="fader"
+								value="0"
+								max="20"
+								min="-20"
+								id="osc-1-detune"
+							/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<label for="osc-1-gain">Gain</label>
+						</div>
+						<div class="col-9">
+							<input type="range"
+								class="fader"
+								max="100"
+								min="0"
+								value="10"
+								id="osc-1-gain"
+							/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<label for="osc-1-pan">Pan</label>
+						</div>
+						<div class="col-9">
+							<input type="range"
+								class="fader"
+								value="0"
+								max="100"
+								min="-100"
+								id="osc-1-pan"
+							/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<label for="osc-1-waveform">Waveform</label>
+						</div>
+						<div class="col-9">
+							<div class="waves">
+								<input name="osc-1-waveform"
+									id="osc-1-saw" type="radio" value="sawtooth"
+									checked
+								>
+								</input>
+								<label for="osc-1-saw">
+									<svg xmlns="http://www.w3.org/2000/svg"
+										width="0.694444in" height="0.694444in"
+										viewBox="0 0 50 50">
+										<path id="Unnamed"
+											fill="none" stroke="black" stroke-width="2"
+											d="M 5.00,25.00
+												C 5.00,25.00 25.00,5.00 25.00,5.00
+												25.00,5.00 25.00,45.00 25.00,45.00
+												25.00,45.00 45.00,24.75 45.00,25.00" />
+									</svg>
+								</label>
+								<input
+									name="osc-1-waveform"
+									type="radio"
+									value="sine"
+									id="osc-1-sin"
+								>
+								</input>
+								<label for="osc-1-sin">
+									<svg xmlns="http://www.w3.org/2000/svg"
+										 width="0.694444in" height="0.694444in"
+										 viewBox="0 0 50 50">
+										<path id="Unnamed"
+											fill="none" stroke="black" stroke-width="2"
+											d="M 5.25,25.00
+												C 7.38,56.80 26.61,45.99 25.25,25.00M 25.00,25.00
+												C 25.00,-2.00 45.00,-2.00 45.00,25.00" />
+									</svg>
+								</label>
+								<input
+									name="osc-1-waveform"
+									type="radio"
+									value="square"
+									id="osc-1-square"
+								>
+								</input>
+								<label for="osc-1-square">
+									<svg xmlns="http://www.w3.org/2000/svg"
+										width="0.694444in" height="0.694444in"
+										viewBox="0 0 50 50">
+										<path id="Unnamed"
+											fill="none" stroke="black" stroke-width="2"
+											d="M 5.00,25.00
+												C 5.00,25.00 5.00,5.00 5.00,5.00
+												5.00,5.00 25.25,5.00 25.25,5.00
+												25.25,5.00 25.00,45.00 25.00,45.00
+												25.00,45.00 45.00,45.00 45.00,45.00
+												45.00,45.00 45.00,25.00 45.00,25.00" />
+									</svg>
+								</label>
+								<input
+									name="osc-1-waveform"
+									type="radio"
+									value="triangle"
+									id="osc-1-triangle"
+								>
+								</input>
+								<label for="osc-1-triangle">
+									<svg xmlns="http://www.w3.org/2000/svg"
+										width="0.694444in" height="0.694444in"
+										viewBox="0 0 50 50">
+										<path id="Unnamed"
+											fill="none" stroke="black" stroke-width="2"
+											d="M 5.00,25.00
+												C 5.00,25.00 15.00,5.00 15.00,5.00
+												15.00,5.00 35.00,45.00 35.00,45.00
+												35.00,45.00 45.00,25.00 45.00,25.00" />
+									</svg>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 container" id="osc-2">
+					<div class="row">
+						<div class="col">
+							<h2>Osc 2</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<label for="osc-2-octave">Octave</label>
+						</div>
+						<div class="col-9">
+							<input type="range"
+								class="fader"
+								value="0"
+								max="2"
+								min="-2"
+								id="osc-2-octave"
+							/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<label for="osc-2-detune">Detune</label>
+						</div>
+						<div class="col-9">
+							<input type="range"
+								class="fader"
+								value="0"
+								max="20"
+								min="-20"
+								id="osc-2-detune"
+							/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<label for="osc-2-gain">Gain</label>
+						</div>
+						<div class="col-9">
+							<input type="range"
+								class="fader"
+								max="100"
+								min="0"
+								value="10"
+								id="osc-2-gain"
+							/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<label for="osc-2-pan">Pan</label>
+						</div>
+						<div class="col-9">
+							<input type="range"
+								class="fader"
+								value="0"
+								max="100"
+								min="-100"
+								id="osc-2-pan"
+							/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<label for="osc-2-waveform">Waveform</label>
+						</div>
+						<div class="col-9">
+							<div class="waves">
+								<input name="osc-2-waveform"
+									id="osc-2-saw" type="radio" value="sawtooth"
+									checked
+								>
+								</input>
+								<label for="osc-2-saw">
+									<svg xmlns="http://www.w3.org/2000/svg"
+										width="0.694444in" height="0.694444in"
+										viewBox="0 0 50 50">
+										<path id="Unnamed"
+											fill="none" stroke="black" stroke-width="2"
+											d="M 5.00,25.00
+												C 5.00,25.00 25.00,5.00 25.00,5.00
+												25.00,5.00 25.00,45.00 25.00,45.00
+												25.00,45.00 45.00,24.75 45.00,25.00" />
+									</svg>
+								</label>
+								<input
+									name="osc-2-waveform"
+									type="radio"
+									value="sine"
+									id="osc-2-sin"
+								>
+								</input>
+								<label for="osc-2-sin">
+									<svg xmlns="http://www.w3.org/2000/svg"
+										 width="0.694444in" height="0.694444in"
+										 viewBox="0 0 50 50">
+										<path id="Unnamed"
+											fill="none" stroke="black" stroke-width="2"
+											d="M 5.25,25.00
+												C 7.38,56.80 26.61,45.99 25.25,25.00M 25.00,25.00
+												C 25.00,-2.00 45.00,-2.00 45.00,25.00" />
+									</svg>
+								</label>
+								<input
+									name="osc-2-waveform"
+									type="radio"
+									value="square"
+									id="osc-2-square"
+								>
+								</input>
+								<label for="osc-2-square">
+									<svg xmlns="http://www.w3.org/2000/svg"
+										width="0.694444in" height="0.694444in"
+										viewBox="0 0 50 50">
+										<path id="Unnamed"
+											fill="none" stroke="black" stroke-width="2"
+											d="M 5.00,25.00
+												C 5.00,25.00 5.00,5.00 5.00,5.00
+												5.00,5.00 25.25,5.00 25.25,5.00
+												25.25,5.00 25.00,45.00 25.00,45.00
+												25.00,45.00 45.00,45.00 45.00,45.00
+												45.00,45.00 45.00,25.00 45.00,25.00" />
+									</svg>
+								</label>
+								<input
+									name="osc-2-waveform"
+									type="radio"
+									value="triangle"
+									id="osc-2-triangle"
+								>
+								</input>
+								<label for="osc-2-triangle">
+									<svg xmlns="http://www.w3.org/2000/svg"
+										width="0.694444in" height="0.694444in"
+										viewBox="0 0 50 50">
+										<path id="Unnamed"
+											fill="none" stroke="black" stroke-width="2"
+											d="M 5.00,25.00
+												C 5.00,25.00 15.00,5.00 15.00,5.00
+												15.00,5.00 35.00,45.00 35.00,45.00
+												35.00,45.00 45.00,25.00 45.00,25.00" />
+									</svg>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="btn btn-outline-success" id="start">Start</button>
+			<button class="btn btn-outline-danger" id="stop">Stop</button>
+		</div>
+		<script
+			type="text/javascript"
+			charset="utf-8"
+			src="/bundle.js"
+		></script>
+	</body>
+</html>
