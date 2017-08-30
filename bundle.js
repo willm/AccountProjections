@@ -9,14 +9,8 @@ function main () {
         var slider = document.getElementById(prefix + '-detune');
         var gainSlider = document.getElementById(prefix + '-gain');
         var panSlider = document.getElementById(prefix + '-pan');
-        var octaveSlider = document.getElementById(prefix + '-octave');
         gainSlider.oninput = function (e) {
             var evt = synth.events.gain(oscIndex, Number(e.target.value) / 100);
-            synthElement.dispatchEvent(evt);
-        }
-
-        octaveSlider.oninput = function (e) {
-            var evt = synth.events.octave(oscIndex, Number(e.target.value));
             synthElement.dispatchEvent(evt);
         }
 
@@ -37,9 +31,31 @@ function main () {
         });
     }
 
+    function registerOctaveButtons (synth, oscIndex) {
+        var buttons = document.getElementsByName('osc-' + (oscIndex + 1) + '-octave');
+        buttons.forEach(function (button){
+            button.onchange = function (changeEvt) {
+                var evt = synth.events.octave(
+                    oscIndex, Number(changeEvt.target.value)
+                );
+                synthElement.dispatchEvent(evt);
+            }
+        });
+    }
+
     function connectKeyboard (synth) {
+        var keyboard = 'awsedftgyhujkilo'.split('');
+        keyboard.forEach(function (k, i) {
+            const e = document.getElementById('key-' + k);
+            if (!e) { return; }
+            e.onmousedown = e.ontouchstart = function (evt) {
+                synth.noteOn(60 + i);
+            };
+            e.onmouseup = e.ontouchend = function (evt) {
+                synth.noteOff();
+            };
+        });
         document.onkeydown = function (e) {
-            var keyboard = 'awsedftgyhujkilo'.split('');
             if (keyboard.indexOf(e.key) != -1) {
                 var midiNote = 60 + keyboard.indexOf(e.key);
                 synth.noteOn(midiNote);
@@ -50,26 +66,20 @@ function main () {
         }
     }
 
-    function createSynth (stopButton) {
+    function createSynth () {
         var synth = new Synth(ac, synthElement);
         registerOscillatorControls(synth, '1', 0);
         registerOscillatorControls(synth, '2', 1);
-        stopButton.onclick = synth.stop.bind(synth);
+        registerOctaveButtons(synth, 0);
+        registerOctaveButtons(synth, 1);
         connectKeyboard(synth);
         return synth;
     }
 
     var ac = new AudioContext();
     var synthElement = document.getElementById('synth');
-    var stopButton = document.getElementById('stop');
-    var start = document.getElementById('start');
-    var synth;
-    start.onclick = function () {
-        if (synth) {synth.stop();}
-        synth = createSynth(stopButton);
-        synth.start();
-    }
-
+    var synth = createSynth(synthElement);
+    synth.start();
 }
 
 document.onload = window.onload = main;

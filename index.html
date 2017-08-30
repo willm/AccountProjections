@@ -15,16 +15,60 @@
 					</div>
 					<div class="row">
 						<div class="col-3">
-							<label for="osc-1-octave">Octave</label>
+							<label for="osc-1-octavebuttons">Octave</label>
 						</div>
 						<div class="col-9">
-							<input type="range"
-								class="fader"
-								value="0"
-								max="2"
-								min="-2"
-								id="osc-1-octave"
-							/>
+							<div class="" role="group" aria-label="octave">
+								<input name="osc-1-octave"
+									type="radio" value="-2" id="osc-1-octave-0"
+								>
+								</input>
+								<label for="osc-1-octave-0" class="btn btn-secondary rounded octave">
+									0
+								</label>
+								<input name="osc-1-octave"
+									type="radio" value="-1" id="osc-1-octave-1"
+								>
+								</input>
+								<label for="osc-1-octave-1" class="btn btn-secondary rounded octave">
+									1
+								</label>
+								<input name="osc-1-octave"
+									type="radio" value="0" id="osc-1-octave-2" checked
+								>
+								</input>
+								<label for="osc-1-octave-2" class="btn btn-secondary rounded octave">
+									2
+								</label>
+								<input name="osc-1-octave"
+									type="radio" value="1" id="osc-1-octave-3"
+								>
+								</input>
+								<label for="osc-1-octave-3" class="btn btn-secondary rounded octave">
+									3
+								</label>
+								<input name="osc-1-octave"
+									type="radio" value="2" id="osc-1-octave-4"
+								>
+								</input>
+								<label for="osc-1-octave-4" class="btn btn-secondary rounded octave">
+									4
+								</label>
+								<input name="osc-1-octave"
+									type="radio" value="3" id="osc-1-octave-5"
+								>
+								</input>
+								<label for="osc-1-octave-5" class="btn btn-secondary rounded octave">
+									5
+								</label>
+								<input name="osc-1-octave"
+									type="radio" value="4" id="osc-1-octave-6"
+								>
+								</input>
+								<label for="osc-1-octave-6" class="btn btn-secondary rounded octave">
+									6
+								</label>
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -162,16 +206,60 @@
 					</div>
 					<div class="row">
 						<div class="col-3">
-							<label for="osc-2-octave">Octave</label>
+							<label for="osc-2-octavebuttons">Octave</label>
 						</div>
 						<div class="col-9">
-							<input type="range"
-								class="fader"
-								value="0"
-								max="2"
-								min="-2"
-								id="osc-2-octave"
-							/>
+							<div class="" role="group" aria-label="octave">
+								<input name="osc-2-octave"
+									type="radio" value="-2" id="osc-2-octave-0"
+								>
+								</input>
+								<label for="osc-2-octave-0" class="btn btn-secondary rounded octave">
+									0
+								</label>
+								<input name="osc-2-octave"
+									type="radio" value="-1" id="osc-2-octave-1"
+								>
+								</input>
+								<label for="osc-2-octave-1" class="btn btn-secondary rounded octave">
+									1
+								</label>
+								<input name="osc-2-octave"
+									type="radio" value="0" id="osc-2-octave-2" checked
+								>
+								</input>
+								<label for="osc-2-octave-2" class="btn btn-secondary rounded octave">
+									2
+								</label>
+								<input name="osc-2-octave"
+									type="radio" value="1" id="osc-2-octave-3"
+								>
+								</input>
+								<label for="osc-2-octave-3" class="btn btn-secondary rounded octave">
+									3
+								</label>
+								<input name="osc-2-octave"
+									type="radio" value="2" id="osc-2-octave-4"
+								>
+								</input>
+								<label for="osc-2-octave-4" class="btn btn-secondary rounded octave">
+									4
+								</label>
+								<input name="osc-2-octave"
+									type="radio" value="3" id="osc-2-octave-5"
+								>
+								</input>
+								<label for="osc-2-octave-5" class="btn btn-secondary rounded octave">
+									5
+								</label>
+								<input name="osc-2-octave"
+									type="radio" value="4" id="osc-2-octave-6"
+								>
+								</input>
+								<label for="osc-2-octave-6" class="btn btn-secondary rounded octave">
+									6
+								</label>
+							</div>
 						</div>
 					</div>
 					<div class="row">
@@ -302,8 +390,20 @@
 					</div>
 				</div>
 			</div>
-			<button class="btn btn-outline-success" id="start">Start</button>
-			<button class="btn btn-outline-danger" id="stop">Stop</button>
+			<div class="row">
+				<div class="col-1 rounded border note" id="key-a" >a</div>
+				<div class="col-1 rounded border note" id="key-w">w</div>
+				<div class="col-1 rounded border note" id="key-s">s</div>
+				<div class="col-1 rounded border note" id="key-e">e</div>
+				<div class="col-1 rounded border note" id="key-d">d</div>
+				<div class="col-1 rounded border note" id="key-f">f</div>
+				<div class="col-1 rounded border note" id="key-t">t</div>
+				<div class="col-1 rounded border note" id="key-g">g</div>
+				<div class="col-1 rounded border note" id="key-y">y</div>
+				<div class="col-1 rounded border note" id="key-h">h</div>
+				<div class="col-1 rounded border note" id="key-u">u</div>
+				<div class="col-1 rounded border note" id="key-j">j</div>
+			</div>
 		</div>
 		<script
 			type="text/javascript"

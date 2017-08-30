@@ -105,6 +105,24 @@ input[type=radio]:checked + label svg path {
 	stroke-width: 3px;
 }
 
+input[type=radio]:checked + label.octave {
+	background-color: #727b84;
+	background-image: none;
+	border-color: #6c757d;
+}
+
 .waves {
 	padding: auto;
+}
+
+.note {
+	height: 100px;
+	background: #248224;
+	color: #ffffff;
+	cursor: pointer;
+	font-size: xx-large;
+}
+
+div.note:hover{
+	background: #488224;
 }
