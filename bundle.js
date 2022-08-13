@@ -113,12 +113,15 @@
           return synth;
         }
 
-        document.querySelector("body").addEventListener("click", () => {
-          var ac = new AudioContext();
-          var synthElement = document.getElementById("synth");
-          var synth = createSynth(synthElement);
+        var ac, synthElement, synth;
+        const start = () => {
+          ac = new AudioContext();
+          synthElement = document.getElementById("synth");
+          synth = createSynth(synthElement);
           synth.start();
-        });
+          document.querySelector("body").removeEventListener("click", start);
+        };
+        document.querySelector("body").addEventListener("click", start);
       }
 
       document.onload = window.onload = main;
